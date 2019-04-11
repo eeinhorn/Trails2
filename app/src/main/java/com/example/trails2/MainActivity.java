@@ -1,5 +1,6 @@
 package com.example.trails2;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -78,5 +79,15 @@ public class MainActivity extends AppCompatActivity {
             }
             finish();
         }
+    }
+
+    public void openCreateTrail(View view) {
+        Intent intent = new Intent(this, CreateTrail.class);
+        startActivity(intent);
+    }
+
+    public void openViewTrail(View view) {
+        Intent intent = new Intent(this, ViewTrail.class);
+        startActivity(intent);
     }
 }
