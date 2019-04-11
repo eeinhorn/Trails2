@@ -33,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
             CameraPermissionHelper.requestCameraPermission(this);
             return;
         }
-        Session mSession = null;
 
         // Make sure ARCore is installed and up to date.
         try {
+            Session mSession = null;
             if (mSession == null) {
                 switch (ArCoreApk.getInstance().requestInstall(this, mUserRequestedInstall)) {
                     case INSTALLED:
