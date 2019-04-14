@@ -95,7 +95,7 @@ public class CreateTrail extends AppCompatActivity {
             Log.i("1","accessing the permission check");
             return;
         }
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 3, locationListener);
     }
 
     public void startRecording(View view) {
