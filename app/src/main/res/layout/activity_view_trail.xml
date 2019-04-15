@@ -20,20 +20,21 @@
 
     <!--</android.support.design.widget.AppBarLayout>-->
 
-    <include layout="@layout/content_view_trail" />
+    <!--<include layout="@layout/content_view_trail" />-->
 
     <Button
         android:id="@+id/searchButton"
         style="@android:style/Widget.Button"
         android:layout_width="169dp"
         android:layout_height="72dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="141dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginBottom="352dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginEnd="123dp"
+        android:layout_marginBottom="348dp"
         android:onClick="openTrailMenu"
-        android:text="Button"
+        android:text="@string/search_for_trails"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault"
         tools:text="@string/search_for_trails" />
 
