@@ -12,6 +12,14 @@ import com.google.ar.core.exceptions.UnavailableArcoreNotInstalledException;
 import com.google.ar.core.exceptions.UnavailableDeviceNotCompatibleException;
 import com.google.ar.core.exceptions.UnavailableSdkTooOldException;
 import com.google.ar.core.exceptions.UnavailableUserDeclinedInstallationException;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+
+import org.json.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
 
 public class ViewTrail extends AppCompatActivity {
     // Set to true ensures requestInstall() triggers installation if necessary.
@@ -81,6 +89,11 @@ public class ViewTrail extends AppCompatActivity {
             }
             finish();
         }
+    }
+    public Trail loadTrail(String tFileName) throws FileNotFoundException {
+        Object obj = new JsonParser().parse(new FileReader(tFileName+".json"));
+        Trail trail = (Trail) obj;
+        return trail;
     }
 
 }
