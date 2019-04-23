@@ -15,9 +15,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import static android.location.LocationManager.GPS_PROVIDER;
 
-public class CreateTrail extends AppCompatActivity {
+public class CreateTrail extends AppCompatActivity{
     boolean isRecording = false;
     Trail trail = new Trail();
     Button start;
@@ -104,9 +110,15 @@ public class CreateTrail extends AppCompatActivity {
         stop.setEnabled(true);
     }
 
-    public void stopRecording(View view) {
+    public void stopRecording(View view) throws IOException{
         isRecording = false;
         stop.setEnabled(false);
         start.setEnabled(true);
+        String trailName = trail.toString();
+        trailName = trailName.replace("\n", "");
+        trailName = trailName.replace(".", "");
+        Log.d("name", trailName);
+        Gson trailgson = new Gson();
+        trailgson.toJson(trail, new FileWriter("values/"+trailName + ".json"));
     }
 }
