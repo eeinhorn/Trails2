@@ -1,5 +1,12 @@
 package com.example.trails2;
 
+/*
+    This activity is where ArCore is opened and where
+    the augmented reality experience takes place.
+    It checks that ARCore is installed and compatible
+    with the user's device.
+*/
+
 import android.Manifest;
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -96,7 +103,6 @@ public class ARActivity extends AppCompatActivity {
                     // Create the Anchor.
                     //Anchor anchor = hitResult.createAnchor();
                     AnchorNode anchorNode = new AnchorNode();
-                    anchorNode.setWorldPosition(new Vector3(x, y, z));
                     anchorNode.setParent(arFragment.getArSceneView().getScene());
                     Log.i("create anchor", "anchor created");
 

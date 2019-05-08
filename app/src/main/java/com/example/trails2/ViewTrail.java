@@ -1,5 +1,10 @@
 package com.example.trails2;
 
+/*
+    The activity would allow users to open a menu to search trails
+    when this functionality is implemented in the future.
+*/
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
